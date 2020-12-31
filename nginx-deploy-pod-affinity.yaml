@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: with-pod-affinity
   labels:
-    run: tier
+    type: prod
 spec:
   replicas: 3
   selector:
    matchLabels:
-     run: tier
+     app: tier
   template:
     metadata:
       labels:
-        run: tier
+        app: tier
     spec:
      containers:
       - name: with-pod-affinity
@@ -26,4 +26,4 @@ spec:
                 operator: In
                 values:
                 - red
-            topologyKey: topology.kubernetes.io/hostname
+            topologyKey: kubernetes.io/hostname
