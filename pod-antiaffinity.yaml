@@ -28,4 +28,10 @@ spec:
                operator: In
                values:
                - red
-           topologyKey: kubernetes.io/hostname
+           topologyKey: kubernetes.io/hostname  
+
+
+
+
+
+
