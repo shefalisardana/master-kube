@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: with-pod-affinity
+  name: with-node-affinity
   labels:
     run: tier
 spec:
@@ -15,7 +15,7 @@ spec:
         run: tier
     spec:
      containers:
-      - name: with-pod-affinity
+      - name: with-node-affinity
         image: nginx
      tolerations:
       - key: "app"
