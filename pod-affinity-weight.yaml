@@ -4,12 +4,14 @@ metadata:
   name: with-pod-affinity
 spec:
   affinity:
-    podAffinity: 
-      preferredDuringSchedulingIgnoredDuringExecution: 
-         - labelSelector:
+    podAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
             matchExpressions:
-            - key: color 
-              operator: In 
+            - key: color
+              operator: In
               values:
               - green
           topologyKey: kubernetes.io/hostname
