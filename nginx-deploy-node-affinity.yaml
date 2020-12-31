@@ -18,9 +18,9 @@ spec:
       - name: with-node-affinity
         image: nginx
      tolerations:
-      - key: "app"
+      - key: "type"
         operator: "Equal"
-        value: "tier"
+        value: "prod"
         effect: "NoSchedule"
      affinity:
       nodeAffinity:
