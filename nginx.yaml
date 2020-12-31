@@ -8,5 +8,3 @@ spec:
   containers:
   - image: nginx
     name: nginx
-  nodeSelector:
-      color: red
