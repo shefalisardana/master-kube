@@ -6,7 +6,7 @@ spec:
   affinity:
     podAffinity: 
       preferredDuringSchedulingIgnoredDuringExecution: 
-      - weight: 1 
+      - weight: 100
         podAffinityTerm:
           labelSelector:
             matchExpressions:
