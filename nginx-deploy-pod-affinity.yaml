@@ -25,5 +25,5 @@ spec:
               - key: color
                 operator: In
                 values:
-                 - red
+                - red
             topologyKey: topology.kubernetes.io/hostname
