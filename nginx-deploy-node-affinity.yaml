@@ -5,7 +5,7 @@ metadata:
   labels:
     run: tier
 spec:
-  replicas: 4
+  replicas: 3
   selector:
    matchLabels:
      run: tier
@@ -17,6 +17,11 @@ spec:
      containers:
       - name: with-pod-affinity
         image: nginx
+     tolerations:
+      - key: "app"
+        operator: "Equal"
+        value: "tier"
+        effect: "NoSchedule"
      affinity:
       nodeAffinity:
        requiredDuringSchedulingIgnoredDuringExecution:
