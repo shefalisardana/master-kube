@@ -9,6 +9,5 @@ spec:
     name: alpine
     securityContext:
       capabilities:
-        drop:
-          - NET_RAW
-          - CHOWN
+        drop: ["all"]
+        add: ["NET_BIND"]
