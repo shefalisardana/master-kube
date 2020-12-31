@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sec-capability
+  namespace: default
+spec:
+  containers:
+  - image: alpine:latest
+    name: alpine
+    securityContext:
+      capabilities:
+        drop:
+          - NET_RAW
+          - CHOWN
