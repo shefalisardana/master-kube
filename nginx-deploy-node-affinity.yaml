@@ -2,27 +2,27 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: with-pod-affinity
+  labels:
+    run: tier
 spec:
   replicas: 4
   selector:
-   matchLables:
+   matchLabels:
      run: tier
   template:
     metadata:
-      name: nginx-deploy
       labels:
-         run: tier
-   spec:
-    containers:
-     - name: with-pod-affinity
-       image: nginx
-    affinity:
-     podAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-      - labelSelector:
-          matchExpressions:
-          - key: security
-            operator: In
-            values:
-            - s1
-        topologyKey: kubernetes.io/hostname
+        run: tier
+    spec:
+     containers:
+      - name: with-pod-affinity
+        image: nginx
+     affinity:
+      nodeAffinity:
+       requiredDuringSchedulingIgnoredDuringExecution:
+         nodeSelectorTerms:
+         - matchExpressions:
+           - key: app
+             operator: In
+             values:
+             - tier
