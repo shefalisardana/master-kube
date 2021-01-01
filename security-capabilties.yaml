@@ -16,7 +16,7 @@ spec:
          runAsUser: 3000
          fsGroup: 2000
       containers:
-       - name: nginx-demo
+       - name: node-hello
          image: gcr.io/google-samples/node-hello:1.0
          volumeMounts:
           - name: empty-ctx-vol
@@ -24,7 +24,7 @@ spec:
          securityContext:
            capabilities:
              drop: ["NET_RAW"]
-             add:  ["CHOWN"]
+             add:  ["SYS_ADMIN"]
       volumes:
        - name: empty-ctx-vol
          emptyDir: {}
