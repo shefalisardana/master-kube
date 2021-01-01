@@ -4,6 +4,7 @@ metadata:
   name: helloworld
 spec:
   completions: 4
+  parallelism: 2
   template:
     spec:
       containers:
