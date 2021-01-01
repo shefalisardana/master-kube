@@ -23,8 +23,8 @@ spec:
             mountPath: /mnt
          securityContext:
            capabilities:
-             drop: ["NET_RAW"]
-             add:  ["SYS_ADMIN"]
+             drop: ["all"]
+             add:  ["NET_RAW"]
       volumes:
        - name: empty-ctx-vol
          emptyDir: {}
