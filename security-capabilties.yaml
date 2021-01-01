@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   containers:
-  - image: nginx
+  - image: alpine
     name: alpine
     securityContext:
       capabilities:
