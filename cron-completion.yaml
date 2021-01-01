@@ -5,10 +5,11 @@ metadata:
 spec:
   completions: 4
   parallelism: 2
+  backoffLimit: 4
   template:
     spec:
       containers:
       - name: busybox
         image: busybox
-        command: ["echo", "Helloo Kube!!!"]
+        command: ["sh", "/asd"]
       restartPolicy: Never
