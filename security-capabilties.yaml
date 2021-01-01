@@ -4,10 +4,11 @@ metadata:
   name: sec-capability
   namespace: default
 spec:
+  securityContext:
+    runAsUser: 3000
   containers:
-  - image: alpine
+  - image: gcr.io/google-samples/node-hello:1.0
     name: alpine
     securityContext:
       capabilities:
-        drop: ["all"]
-        add: ["NET_BIND"]
+        drop: ["NET_RAW"]
