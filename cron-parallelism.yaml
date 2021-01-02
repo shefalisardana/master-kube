@@ -11,4 +11,4 @@ spec:
       - name: nginx
         image: nginx
         command: ["echo", "Helloo Kube!!!"]
-      restartPolicy: Never
+      restartPolicy: OnFailure
