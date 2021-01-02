@@ -10,4 +10,5 @@ spec:
       containers:
       - name: nginx
         image: nginx
-      restartPolicy: OnFailure
+        command: ["sleep", "90"]
+      restartPolicy: Never
